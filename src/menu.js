@@ -1,5 +1,8 @@
+import dish1 from "./dish1.jpeg";
+import dish2 from "./dish2.jpeg";
+
 function loadMenu() {
-    const content = document.querySelector(".content");
+    const content = document.getElementById("content");
     if (!content) return;
     
     while (content.firstChild) {
@@ -17,12 +20,12 @@ function loadMenu() {
 
     const items = [
         {
-            image: "https://via.placeholder.com/250",
+            image: dish1,
             title: "Spring Harvest Salad",
             description: "Fresh greens, radishes, and a zesty lemon vinaigrette.",
         },
         {
-            image: "https://via.placeholder.com/250",
+            image: dish2,
             title: "Farmhouse Pasta",
             description: "Handmade pasta with a rich tomato-basil sauce.",
         },
@@ -46,8 +49,14 @@ function loadMenu() {
         menuGrid.append(menuItem);
     });
 
+    const footer = document.createElement("footer");
+    const p = document.createElement("p");
+    p.textContent = "© 2025 The Blooming Fork. All rights reserved.";
+    footer.append(p);
+
     section.append(heading, menuGrid);
     content.append(section);
+    content.append(footer);
 }
 
 export { loadMenu };

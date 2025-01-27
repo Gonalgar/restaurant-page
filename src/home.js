@@ -1,7 +1,7 @@
 function loadHome() {
-    const content = document.querySelector(".content");
+    const content = document.getElementById("content");
     if (!content) return;
-    
+
     while (content.firstChild) {
         content.removeChild(content.firstChild);
     }
@@ -20,8 +20,14 @@ function loadHome() {
     paragraph.textContent =
         "At The Blooming Fork, we bring fresh, local ingredients to your plate. Explore the seasons with us and savor the simplicity of farm-to-table dining.";
 
+    const footer = document.createElement("footer");
+    const p = document.createElement("p");
+    p.textContent = "© 2025 The Blooming Fork. All rights reserved.";
+    footer.append(p);
+
     section.append(heading, paragraph);
     content.append(hero, section);
+    content.append(footer);
 }
 
 export { loadHome };
