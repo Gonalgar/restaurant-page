@@ -1,6 +1,10 @@
 function loadHome() {
     const content = document.querySelector(".content");
     if (!content) return;
+    
+    while (content.firstChild) {
+        content.removeChild(content.firstChild);
+    }
 
     const hero = document.createElement("div");
     hero.className = "hero";

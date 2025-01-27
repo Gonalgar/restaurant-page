@@ -1,6 +1,10 @@
 function loadMenu() {
     const content = document.querySelector(".content");
     if (!content) return;
+    
+    while (content.firstChild) {
+        content.removeChild(content.firstChild);
+    }
 
     const section = document.createElement("section");
     section.className = "content";
